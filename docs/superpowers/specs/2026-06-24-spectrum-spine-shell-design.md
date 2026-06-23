@@ -46,15 +46,18 @@ components/primitives/eyebrow.tsx  # add accent="spine" support
 ## Components / units
 
 ### 1. `--spine-hue` token
+
 Add `--spine-hue: var(--pine);` to `:root` in `styles/tokens.css`. Default pine so
 the spine and any spine-accented eyebrow are calm before JS runs / under reduced
 motion.
 
 ### 2. Eyebrow `accent="spine"` (modify existing primitive)
+
 `accent` already accepts a CSS color string. Add a sentinel: when
 `accent === "spine"`, render with `color: var(--spine-hue)`. Backwards-compatible.
 
 ### 3. SpectrumSpine (`components/shell/spectrum-spine.tsx`, client)
+
 - Fixed line: `left: clamp(12px, 2vw, 28px)`, `top/bottom: 0`, `width: 2px`,
   subtle glow (`box-shadow`), `z-index` below the header.
 - One ScrollTrigger over `document.documentElement`, `scrub: true`. `onUpdate`
@@ -65,12 +68,14 @@ motion.
 - 60fps: scrubbed updates only; no layout reads in `onUpdate`.
 
 ### 4. Logo (`components/shell/logo.tsx`)
+
 Inline the prism-swoosh SVG (from `brand/Main Logo/Alive Spectra Logo.svg`, keeps
 its own rainbow gradient) at a controlled height; optional `withWordmark` renders
 "Alive Spectra" in Clash beside it. Decorative SVG gets `aria-hidden`; the link
 wrapping it carries the accessible name.
 
 ### 5. SiteHeader (`components/shell/site-header.tsx`, client)
+
 - Fixed top; renders `Logo` (links to `/`), `mainNav` links, and a primary
   `Button` "Book a consultation" (`href="/contact"`).
 - Transparent→glass: a 1px sentinel at the top of `<main>`; an IntersectionObserver
@@ -80,6 +85,7 @@ wrapping it carries the accessible name.
 - Keyboard accessible; visible focus on every interactive element.
 
 ### 6. MobileMenu (`components/shell/mobile-menu.tsx`, client)
+
 - Full-screen `fixed inset-0` pine panel; `mainNav` as large Clash links + the CTA;
   staggered Motion reveal; spectrum accent bar on the active route (`usePathname`).
 - A11y: scroll-lock while open, focus trap, `Esc` to close, restore focus to the
@@ -87,13 +93,16 @@ wrapping it carries the accessible name.
 - Reduced motion (`useReducedMotion`): instant open/close, no stagger.
 
 ### 7. SiteFooter (`components/shell/site-footer.tsx`, server)
+
 Pine-toned. NAP block (House 60, Road 28, Gulshan-1, Dhaka-1212; phones
 +880 1919-666630 / +880 1939-903964; alivespectra@gmail.com — pulled from
 `lib/site.ts`), sitemap columns + sister-concern quick links + socials + legal
 (from `data/navigation.ts`), and a copyright line.
 
 ### 8. data/navigation.ts
+
 Typed exports:
+
 - `mainNav: { label: string; href: string }[]`
 - `footerColumns: { title: string; links: { label; href }[] }[]`
 - `sisterConcerns: { label: string; href: string }[]` (14 concerns)
@@ -101,6 +110,7 @@ Typed exports:
 - `legal: { label: string; href: string }[]`
 
 ### 9. Layout + placeholder
+
 - `app/layout.tsx`: inside `SmoothScroll`, render `SpectrumSpine`, `SiteHeader`,
   `<main id="content">{children}</main>`, `SiteFooter`.
 - `app/page.tsx`: replace with ~4 tall stacked `Section`s (alternating
