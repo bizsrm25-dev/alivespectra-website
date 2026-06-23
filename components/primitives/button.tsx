@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +22,10 @@ type ButtonProps =
       href?: undefined;
     } & ButtonHTMLAttributes<HTMLButtonElement>);
 
+/**
+ * Renders a `<button>`, or a Next `<Link>` when `href` is set (so internal
+ * navigation is client-side and prefetched; external/hash hrefs still work).
+ */
 export function Button({
   variant = "primary",
   className,
@@ -29,9 +34,11 @@ export function Button({
   const classes = cn(base, variants[variant], className);
   if (props.href !== undefined) {
     return (
-      <a
+      <Link
         className={classes}
-        {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}
+        {...(props as AnchorHTMLAttributes<HTMLAnchorElement> & {
+          href: string;
+        })}
       />
     );
   }

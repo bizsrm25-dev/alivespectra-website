@@ -41,6 +41,10 @@
     #e5564b
   );
 
+  /* Live spine hue — updated on scroll by SpectrumSpine; pine by default
+     (and under reduced motion). Eyebrows with accent="spine" read this. */
+  --spine-hue: var(--pine);
+
   /* Type scale — fluid clamp(), bold editorial */
   --text-display: clamp(2.75rem, 1.2rem + 6.5vw, 6rem); /* 44 → 96 */
   --text-h1: clamp(2.25rem, 1.45rem + 3.4vw, 4rem); /* 36 → 64 */
