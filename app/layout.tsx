@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { clashDisplay, hankenGrotesk, spaceMono } from "./fonts";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
+import { SpectrumSpine, SiteHeader, SiteFooter } from "@/components/shell";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,7 +25,14 @@ export default function RootLayout({
       className={`${clashDisplay.variable} ${hankenGrotesk.variable} ${spaceMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
-        <SmoothScroll>{children}</SmoothScroll>
+        <SmoothScroll>
+          <SpectrumSpine />
+          <SiteHeader />
+          <main id="content" className="flex-1">
+            {children}
+          </main>
+          <SiteFooter />
+        </SmoothScroll>
       </body>
     </html>
   );

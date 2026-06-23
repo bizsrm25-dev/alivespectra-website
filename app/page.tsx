@@ -1,35 +1,46 @@
+import { Container, Eyebrow, Section } from "@/components/primitives";
+
 /**
- * Placeholder home — no real pages yet. This exists only to confirm the
- * scaffold renders: the three fonts load, the design tokens resolve, and the
- * spectrum accent is wired. Replace when building the homepage.
+ * Placeholder review page — no real homepage yet. Stacked tall sections exist
+ * only to exercise the shell: the Spectrum Spine's hue shift, spine-accented
+ * eyebrows, and the nav's transparent→glass transition. Replace with the hero
+ * in the next phase.
  */
+const sections = [
+  { eyebrow: "Refraction", title: "One idea, refracted into a full spectrum." },
+  {
+    eyebrow: "Strategy",
+    title: "Scroll to watch the spine shift its wavelength.",
+  },
+  {
+    eyebrow: "Capital",
+    title: "The nav turns to glass past the first screen.",
+  },
+  {
+    eyebrow: "Ecosystem",
+    title: "Shell + spine only — the homepage comes next.",
+  },
+] as const;
+
 export default function Home() {
   return (
-    <main className="mx-auto flex min-h-dvh w-full max-w-3xl flex-col justify-center gap-7 px-6 py-24">
-      <p className="font-mono text-xs tracking-[0.22em] text-teal uppercase">
-        λ 00 — Scaffold ready
-      </p>
-
-      <h1 className="font-display text-6xl leading-[0.95] font-semibold tracking-tight text-pine">
-        Alive Spectra
-      </h1>
-
-      <p className="max-w-prose font-sans text-lg leading-relaxed text-ink/80">
-        Changing the way of thinking. The project scaffold is live — Next.js,
-        Tailwind, Lenis, GSAP and Motion are installed, the Clash Display /
-        Hanken Grotesk / Space Mono fonts are wired through{" "}
-        <span className="font-mono text-sm text-teal">next/font</span>, and the
-        design tokens are loaded. No pages yet.
-      </p>
-
-      <div className="h-px w-full bg-line" />
-
-      {/* Spectrum accent — used sparingly, by design (< ~5% of the viewport). */}
-      <div
-        className="h-1.5 w-40 rounded-full"
-        style={{ background: "var(--spectrum)" }}
-        aria-hidden
-      />
-    </main>
+    <>
+      {sections.map((s, i) => (
+        <Section key={s.eyebrow} tone={i % 2 === 1 ? "pine" : "paper"}>
+          <Container className="flex min-h-[80vh] flex-col justify-center gap-4">
+            <Eyebrow marker={String(i + 1).padStart(2, "0")} accent="spine">
+              {s.eyebrow}
+            </Eyebrow>
+            <h2
+              className={
+                i % 2 === 1 ? "t-display text-paper" : "t-display text-pine"
+              }
+            >
+              {s.title}
+            </h2>
+          </Container>
+        </Section>
+      ))}
+    </>
   );
 }
