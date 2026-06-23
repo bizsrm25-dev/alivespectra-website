@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@import "../styles/tokens.css";
+@import "../styles/typography.css";
+
+/**
+ * Map the design tokens into the Tailwind v4 theme. `inline` keeps the
+ * generated utilities pointing at the CSS variables (defined in
+ * styles/tokens.css), so changing a token updates everything at runtime.
+ */
+@theme inline {
+  /* Fonts → font-display / font-sans / font-mono */
+  --font-display: var(--font-clash-display);
+  --font-sans: var(--font-hanken-grotesk);
+  --font-mono: var(--font-space-mono);
+
+  /* Surfaces & brand → bg-paper, text-ink, text-pine, border-line, ... */
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-pine: var(--pine);
+  --color-pine-2: var(--pine-2);
+  --color-teal: var(--teal);
+  --color-teal-soft: var(--teal-soft);
+  --color-line: var(--line);
+
+  /* Spectrum accents → text-spec-violet, bg-spec-amber, ... (use sparingly) */
+  --color-spec-violet: var(--spec-violet);
+  --color-spec-blue: var(--spec-blue);
+  --color-spec-green: var(--spec-green);
+  --color-spec-amber: var(--spec-amber);
+  --color-spec-red: var(--spec-red);
+
+  /* Radius — sharp on structure, soft on cards/media */
+  --radius-sharp: 3px;
+  --radius-card: 14px;
+  --radius-pill: 999px;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/**
+ * Reduced-motion safety net. The Lenis / GSAP / Motion layers also check this
+ * at runtime, but this guarantees a calm, intentional fallback site-wide.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

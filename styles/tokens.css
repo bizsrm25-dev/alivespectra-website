@@ -1,0 +1,71 @@
+/**
+ * Alive Spectra — design tokens (single source of truth).
+ *
+ * Base palette = pine green + paper + ink. The spectrum is an ACCENT ONLY
+ * (< ~5% of any viewport): use it for the Spectrum Spine, the hero refraction,
+ * and small wavelength markers — never to fill large areas.
+ *
+ * Colors are mapped into the Tailwind theme in app/globals.css (@theme inline)
+ * so utilities like `bg-paper`, `text-ink`, `border-line` become available.
+ * Type-scale, motion, and layout vars below are consumed directly by
+ * styles/typography.css and the primitive components.
+ */
+
+:root {
+  /* Surfaces & ink */
+  --ink: #0e1a16; /* near-black text on light */
+  --paper: #f5f7f6; /* primary light background */
+  --paper-2: #ecf1ef; /* faint lattice / panels */
+
+  /* Brand greens */
+  --pine: #0c3a2e; /* primary dark brand (cover/footer green) */
+  --pine-2: #103b33; /* dark section backgrounds */
+  --teal: #2f7e6e; /* secondary brand / headings, badges */
+  --teal-soft: #6fb3a4; /* hover / quiet accent */
+
+  /* Hairlines */
+  --line: #d7e0dc; /* hairlines on light */
+
+  /* The spectrum — accent only */
+  --spec-violet: #6c4cf1;
+  --spec-blue: #2f8fe8;
+  --spec-green: #2fbe7e;
+  --spec-amber: #f2a93b;
+  --spec-red: #e5564b;
+  --spectrum: linear-gradient(
+    90deg,
+    #6c4cf1,
+    #2f8fe8,
+    #2fbe7e,
+    #f2a93b,
+    #e5564b
+  );
+
+  /* Type scale — fluid clamp(), bold editorial */
+  --text-display: clamp(2.75rem, 1.2rem + 6.5vw, 6rem); /* 44 → 96 */
+  --text-h1: clamp(2.25rem, 1.45rem + 3.4vw, 4rem); /* 36 → 64 */
+  --text-h2: clamp(1.75rem, 1.2rem + 2.3vw, 3rem); /* 28 → 48 */
+  --text-h3: clamp(1.375rem, 1.05rem + 1.35vw, 2rem); /* 22 → 32 */
+  --text-h4: clamp(1.125rem, 1rem + 0.55vw, 1.5rem); /* 18 → 24 */
+  --text-body-lg: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem); /* 17 → 20 */
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-eyebrow: 0.75rem;
+
+  /* Leading & tracking */
+  --leading-display: 0.95;
+  --leading-heading: 1.1;
+  --leading-body: 1.6;
+  --tracking-display: -0.02em;
+  --tracking-eyebrow: 0.18em;
+
+  /* Motion */
+  --ease-focus: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-reveal: 0.8s;
+  --dur-quick: 0.22s;
+
+  /* Layout */
+  --container-max: 75rem; /* 1200px */
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 3rem);
+  --space-section: clamp(4rem, 2rem + 8vw, 8rem);
+}
