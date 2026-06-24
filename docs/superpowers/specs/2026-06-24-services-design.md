@@ -31,13 +31,17 @@ Extend the current `{ slug, name, promise, href, hue }` with:
 
 ```ts
 type Service = {
-  slug: string; name: string; promise: string; href: string; hue: string;
-  overview: string;          // one-line positioning
-  context: string;           // qualitative market/approach paragraph (no hard stats)
-  keyServices: string[];     // 4–6 items
+  slug: string;
+  name: string;
+  promise: string;
+  href: string;
+  hue: string;
+  overview: string; // one-line positioning
+  context: string; // qualitative market/approach paragraph (no hard stats)
+  keyServices: string[]; // 4–6 items
   ecosystem: { label: string; href: string; note: string }; // linked sister concern
-  project: { name: string; href: string };                   // proof link
-  faqs: { q: string; a: string }[];                          // 2–3
+  project: { name: string; href: string }; // proof link
+  faqs: { q: string; a: string }[]; // 2–3
 };
 ```
 
