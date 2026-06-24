@@ -20,6 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/clients",
     "/insights",
     "/contact",
+    "/privacy",
+    "/terms",
   ];
 
   const dynamicPaths = [

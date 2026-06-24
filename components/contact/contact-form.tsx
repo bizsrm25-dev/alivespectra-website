@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, STAGES, type ContactInput } from "@/lib/contact-schema";
 import { services } from "@/data/services";
 import { Button } from "@/components/primitives";
+import { track } from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -42,6 +43,7 @@ export function ContactForm() {
         setStatus("error");
         return;
       }
+      track("contact_submit", { stage: data.stage });
       setStatus("success");
       reset();
     } catch {

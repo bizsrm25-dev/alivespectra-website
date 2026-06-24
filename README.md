@@ -8,7 +8,10 @@ services, sister concerns, and projects. See [`CLAUDE.md`](./CLAUDE.md) for the 
 tokens, sitemap, and non-negotiables, and [`brand/`](./brand) for the source profile, build
 guideline, and logos.
 
-> **Status:** scaffold only — tooling, fonts, and design tokens are wired up. No site pages yet.
+> **Status:** full site built — home, services (+9), plans (+4), ecosystem (+14),
+> projects (+5), clients, about, insights (MDX blog), and contact (Resend-backed),
+> plus sitemap/robots/OG images and analytics. Content is in-brand placeholder
+> copy to refine; legal pages and the Resend domain need finalising before launch.
 
 ---
 
@@ -106,10 +109,23 @@ Configured via `tsconfig.json` (`"@/*": ["./*"]`) — import from the root, e.g.
 2. In [Vercel](https://vercel.com/new), **Import Project** and select the repo.
 3. Vercel auto-detects Next.js — no build settings needed (Build: `next build`, Output: `.next`).
 4. Add the production domain `alivespectra.com` under **Settings → Domains**.
-5. Add any environment variables under **Settings → Environment Variables** before deploying
-   (none required yet; forms/analytics keys come later).
+5. Add the environment variables below under **Settings → Environment Variables**.
 
 Every push to the default branch ships to production; pull requests get preview deploys.
+
+### Environment variables
+
+Copy `.env.example` → `.env.local` for local dev. All are optional — the site
+runs without them (the contact form returns a graceful error, analytics no-op).
+
+| Variable            | Purpose                                                                                                                                                                                                                                                                                 |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `RESEND_API_KEY`    | Resend key for the contact form email.                                                                                                                                                                                                                                                  |
+| `CONTACT_TO`        | Where submissions are delivered (default `alivespectra@gmail.com`).                                                                                                                                                                                                                     |
+| `RESEND_FROM`       | Sender. **Must be a verified-domain address in production** — verify `alivespectra.com` at [resend.com/domains](https://resend.com/domains), then set e.g. `Alive Spectra <hello@alivespectra.com>`. The test sender `onboarding@resend.dev` only delivers to the Resend account owner. |
+| `NEXT_PUBLIC_GA_ID` | GA4 Measurement ID (e.g. `G-XXXXXXX`). GA4 loads only when set.                                                                                                                                                                                                                         |
+
+Vercel Analytics works automatically once deployed on Vercel — no key needed.
 
 Prefer the CLI?
 
