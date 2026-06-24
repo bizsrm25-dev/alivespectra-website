@@ -15,7 +15,7 @@ breadcrumbLd from Phase 4.
 ## Data
 
 - **`data/concerns.ts`** (new) — 14 sister concerns: `{ slug, name, category,
-  description }`. `data/navigation.ts` `sisterConcerns` derives from it (single
+description }`. `data/navigation.ts` `sisterConcerns` derives from it (single
   source; footer + homepage ecosystem teaser keep working).
 - **`data/plans.ts`** — extend with `overview`, `context`, `support: string[]`,
   `ctaLabel`.

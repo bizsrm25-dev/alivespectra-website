@@ -1,3 +1,5 @@
+import { concerns } from "@/data/concerns";
+
 export type NavLink = { label: string; href: string };
 
 export const mainNav: NavLink[] = [
@@ -10,25 +12,11 @@ export const mainNav: NavLink[] = [
   { label: "Insights", href: "/insights" },
 ];
 
-export const sisterConcerns: NavLink[] = [
-  { label: "Team Alive", href: "/ecosystem/team-alive" },
-  { label: "BizSolve", href: "/ecosystem/bizsolve" },
-  { label: "Alive Lighthouse", href: "/ecosystem/alive-lighthouse" },
-  { label: "Agrovez", href: "/ecosystem/agrovez" },
-  { label: "Alive Builders", href: "/ecosystem/alive-builders" },
-  { label: "Alive Holidays", href: "/ecosystem/alive-holidays" },
-  { label: "Alive Service", href: "/ecosystem/alive-service" },
-  { label: "AratB2B", href: "/ecosystem/aratb2b" },
-  { label: "Alive Bazaar", href: "/ecosystem/alive-bazaar" },
-  { label: "Alive Lifestyle", href: "/ecosystem/alive-lifestyle" },
-  { label: "Febrizo", href: "/ecosystem/febrizo" },
-  {
-    label: "Alive Event Management",
-    href: "/ecosystem/alive-event-management",
-  },
-  { label: "Alive News24", href: "/ecosystem/alive-news24" },
-  { label: "Intelligent Interior", href: "/ecosystem/intelligent-interior" },
-];
+/** Derived from the single concerns source so footer + teaser stay in sync. */
+export const sisterConcerns: NavLink[] = concerns.map((c) => ({
+  label: c.name,
+  href: `/ecosystem/${c.slug}`,
+}));
 
 export const footerColumns: { title: string; links: NavLink[] }[] = [
   {
