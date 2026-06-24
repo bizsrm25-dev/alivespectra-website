@@ -26,7 +26,7 @@ worksFor Organization) via new `personLd()` in `lib/json-ld.ts`.
 ## /insights (MDX)
 
 - Posts: `content/insights/*.mdx`, frontmatter `{ title, excerpt, date, tags[],
-  author }`.
+author }`.
 - `lib/insights.ts` — `getAllPosts()` (sorted by date), `getPost(slug)`,
   reading-time calc, all `tags`. Uses `gray-matter`; body rendered with
   `next-mdx-remote/rsc`.
