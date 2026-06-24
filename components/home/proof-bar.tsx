@@ -15,16 +15,16 @@ export function ProofBar() {
             education.
           </p>
         </div>
-        <ul className="grid grid-cols-2 items-center gap-x-8 gap-y-7 sm:grid-cols-3 lg:grid-cols-5">
+        <ul className="grid grid-cols-2 gap-x-12 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-16 lg:gap-y-12">
           {featured.map((c) => (
-            <li key={c.name} className="flex items-center justify-center">
+            <li key={c.name} className="relative h-16">
               <Image
                 src={c.logo}
                 alt={c.name}
-                width={150}
-                height={44}
+                fill
                 unoptimized
-                className="h-9 w-auto opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
+                sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 45vw"
+                className="object-contain opacity-75 grayscale transition hover:opacity-100 hover:grayscale-0"
               />
             </li>
           ))}

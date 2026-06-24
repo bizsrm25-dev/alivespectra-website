@@ -1,6 +1,7 @@
 "use client";
 
 import type { RefObject } from "react";
+import { useReducedMotion } from "motion/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGsap } from "@/lib/use-gsap";
 
@@ -23,14 +24,24 @@ function colorAtProgress(p: number): string {
 }
 
 /**
- * The site's signature: a thin fixed line at the left edge whose hue glides
- * across the visible spectrum as you scroll. Writes the live color into the
- * shared `--spine-hue` variable (sampled by eyebrows). Under reduced motion
- * useGsap no-ops, so the line stays pine.
+ * The site's signature: a thin fixed line at the left edge. A glowing "comet"
+ * node rides the scroll position (a progress indicator — endorsed by the craft
+ * animation rules) while its hue glides across the spectrum, written to the
+ * shared `--spine-hue` (sampled by eyebrows). Under reduced motion: a static
+ * pine hairline, no comet.
  */
 export function SpectrumSpine() {
-  const ref = useGsap(() => {
+  const reduced = useReducedMotion();
+
+  const ref = useGsap(({ gsap, scope }) => {
     const root = document.documentElement;
+    // One-shot draw-in.
+    gsap.from(scope, {
+      scaleY: 0,
+      transformOrigin: "top center",
+      duration: 0.7,
+      ease: "power2.out",
+    });
     const st = ScrollTrigger.create({
       trigger: root,
       start: "top top",
@@ -38,6 +49,7 @@ export function SpectrumSpine() {
       scrub: true,
       onUpdate: (self) => {
         root.style.setProperty("--spine-hue", colorAtProgress(self.progress));
+        root.style.setProperty("--spine-progress", String(self.progress));
       },
     });
     return () => st.kill();
@@ -50,8 +62,22 @@ export function SpectrumSpine() {
       className="pointer-events-none fixed top-0 bottom-0 left-[clamp(12px,2vw,28px)] z-40 w-0.5"
       style={{
         background: "var(--spine-hue)",
-        boxShadow: "0 0 12px 0 var(--spine-hue)",
+        opacity: 0.4,
       }}
-    />
+    >
+      {!reduced ? (
+        <span
+          className="absolute left-1/2 h-24 w-px -translate-x-1/2 rounded-full"
+          style={{
+            top: 0,
+            transform:
+              "translate(-50%, calc(var(--spine-progress, 0) * (100vh - 6rem)))",
+            background:
+              "linear-gradient(to bottom, transparent, var(--spine-hue), transparent)",
+            boxShadow: "0 0 18px 2px var(--spine-hue)",
+          }}
+        />
+      ) : null}
+    </div>
   );
 }
