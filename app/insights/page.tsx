@@ -24,7 +24,7 @@ export default function InsightsPage() {
   return (
     <Section>
       <Container className="flex flex-col gap-10 pt-16">
-        <header className="flex flex-col gap-4">
+        <header className="reveal flex flex-col gap-4">
           <Eyebrow accent="spine">Insights</Eyebrow>
           <h1 className="t-h1 max-w-[20ch] text-pine">
             Practical thinking for Bangladeshi businesses.

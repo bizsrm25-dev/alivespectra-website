@@ -7,7 +7,7 @@ export function FounderMoment() {
   return (
     <Section tone="pine">
       <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-        <div className="relative aspect-[4/5] w-full max-w-xs overflow-hidden rounded-card border border-paper/15 bg-pine-2">
+        <div className="reveal relative aspect-[4/5] w-full max-w-xs overflow-hidden rounded-card border border-paper/15 bg-pine-2">
           <Image
             src="/founder.jpg"
             alt={`${siteConfig.founder}, Founder & Managing Director of Alive Spectra`}
@@ -17,7 +17,7 @@ export function FounderMoment() {
           />
         </div>
 
-        <div className="flex flex-col gap-6">
+        <div className="reveal flex flex-col gap-6">
           <Eyebrow accent="var(--teal-soft)">From the founder</Eyebrow>
           <blockquote className="t-h2 max-w-[24ch] text-paper">
             “We don’t hand clients a strategy and walk away. We refract one idea

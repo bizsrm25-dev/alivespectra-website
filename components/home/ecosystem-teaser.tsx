@@ -6,7 +6,7 @@ export function EcosystemTeaser() {
   return (
     <Section tone="paper">
       <Container className="flex flex-col gap-10">
-        <div className="flex flex-col gap-4">
+        <div className="reveal flex flex-col gap-4">
           <Eyebrow accent="spine">The ecosystem</Eyebrow>
           <h2 className="t-h1 max-w-[20ch] text-pine">
             One parent, fourteen concerns.
@@ -17,7 +17,7 @@ export function EcosystemTeaser() {
           </p>
         </div>
 
-        <ul className="grid grid-cols-2 gap-px border border-line bg-line sm:grid-cols-3 lg:grid-cols-4">
+        <ul className="reveal grid grid-cols-2 gap-px border border-line bg-line sm:grid-cols-3 lg:grid-cols-4">
           {sisterConcerns.map((c) => (
             <li key={c.href}>
               <Link

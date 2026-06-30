@@ -13,10 +13,12 @@ export function Logo({
   className?: string;
 }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
+    <span
+      className={cn("group/logo inline-flex items-center gap-2.5", className)}
+    >
       <svg
         viewBox="0 0 464.73 515.26"
-        className="h-7 w-auto"
+        className="h-7 w-auto origin-center transition-transform duration-300 ease-out group-hover/logo:scale-110 motion-reduce:transform-none"
         aria-hidden
         focusable="false"
         xmlns="http://www.w3.org/2000/svg"

@@ -51,18 +51,23 @@ export function SiteHeader() {
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "relative font-sans text-sm transition-colors",
+                    "group relative font-sans text-sm transition-colors duration-200",
                     active ? "text-pine" : "text-ink/80 hover:text-pine",
                   )}
                 >
                   {item.label}
-                  {active ? (
-                    <span
-                      aria-hidden
-                      className="absolute -bottom-1.5 left-0 h-0.5 w-full rounded-pill"
-                      style={{ background: "var(--spectrum)" }}
-                    />
-                  ) : null}
+                  <span
+                    aria-hidden
+                    className={cn(
+                      "absolute -bottom-1.5 left-0 h-0.5 w-full origin-left rounded-pill transition-transform duration-300 ease-out motion-reduce:transition-none",
+                      active
+                        ? "scale-x-100"
+                        : "scale-x-0 group-hover:scale-x-100 group-focus-visible:scale-x-100",
+                    )}
+                    style={{
+                      background: active ? "var(--spectrum)" : "var(--pine)",
+                    }}
+                  />
                 </Link>
               );
             })}

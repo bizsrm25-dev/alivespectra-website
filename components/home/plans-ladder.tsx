@@ -6,14 +6,14 @@ export function PlansLadder() {
   return (
     <Section tone="pine">
       <Container className="flex flex-col gap-12">
-        <div className="flex flex-col gap-4">
+        <div className="reveal flex flex-col gap-4">
           <Eyebrow accent="var(--teal-soft)">Growth plans</Eyebrow>
           <h2 className="t-h1 max-w-[20ch] text-paper">
             A ladder from first idea to enterprise scale.
           </h2>
         </div>
 
-        <ol className="flex flex-col">
+        <ol className="reveal flex flex-col">
           {plans.map((p) => (
             <li key={p.slug}>
               <Link

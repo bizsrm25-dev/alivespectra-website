@@ -1,9 +1,9 @@
 "use client";
 
 import type { RefObject } from "react";
-import { useReducedMotion } from "motion/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGsap } from "@/lib/use-gsap";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 const STOPS = ["#6c4cf1", "#2f8fe8", "#2fbe7e", "#f2a93b", "#e5564b"];
 

@@ -22,7 +22,7 @@ export default function PlansPage() {
   return (
     <Section>
       <Container className="flex flex-col gap-12 pt-16">
-        <header className="flex flex-col gap-4">
+        <header className="reveal flex flex-col gap-4">
           <Eyebrow accent="spine">Growth plans</Eyebrow>
           <h1 className="t-h1 max-w-[20ch] text-pine">
             A ladder from first idea to enterprise scale.
@@ -33,7 +33,7 @@ export default function PlansPage() {
           </p>
         </header>
 
-        <ol className="flex flex-col">
+        <ol className="reveal flex flex-col">
           {plans.map((p) => (
             <li key={p.slug}>
               <Link
@@ -61,7 +61,7 @@ export default function PlansPage() {
           ))}
         </ol>
 
-        <div className="flex flex-col items-start gap-4 border-t border-line pt-10">
+        <div className="reveal flex flex-col items-start gap-4 border-t border-line pt-10">
           <h2 className="t-h3 text-pine">Not sure which rung you’re on?</h2>
           <p className="t-body max-w-prose text-ink/70">
             Tell us where the business is today — we’ll start at the right rung.

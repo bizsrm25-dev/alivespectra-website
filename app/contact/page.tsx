@@ -27,7 +27,7 @@ export default function ContactPage() {
   return (
     <Section>
       <Container className="flex flex-col gap-12 pt-16">
-        <header className="flex flex-col gap-4">
+        <header className="reveal flex flex-col gap-4">
           <Eyebrow accent="spine">Contact</Eyebrow>
           <h1 className="t-h1 max-w-[20ch] text-pine">Book a consultation.</h1>
           <p className="t-body-lg max-w-prose text-ink/75">
@@ -36,7 +36,7 @@ export default function ContactPage() {
           </p>
         </header>
 
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_0.7fr]">
+        <div className="reveal grid gap-12 lg:grid-cols-[1.3fr_0.7fr]">
           <ContactForm />
 
           <aside className="flex flex-col gap-6">

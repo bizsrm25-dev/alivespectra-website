@@ -5,7 +5,7 @@ export function HomeCta() {
   const { contact } = siteConfig;
   return (
     <Section tone="pine" className="border-t border-paper/10">
-      <Container className="flex flex-col items-start gap-6">
+      <Container className="reveal flex flex-col items-start gap-6">
         <p className="t-mono text-xs text-teal-soft">
           17 years · Gulshan-1, Dhaka
         </p>

@@ -24,7 +24,7 @@ export default function ClientsPage() {
   return (
     <Section>
       <Container className="flex flex-col gap-12 pt-16">
-        <header className="flex flex-col gap-4">
+        <header className="reveal flex flex-col gap-4">
           <Eyebrow accent="spine">Clients</Eyebrow>
           <h1 className="t-h1 max-w-[20ch] text-pine">
             Trusted across sectors.
@@ -35,7 +35,7 @@ export default function ClientsPage() {
           </p>
         </header>
 
-        <ul className="grid grid-cols-2 gap-x-12 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
+        <ul className="reveal grid grid-cols-2 gap-x-12 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
           {featured.map((c) => (
             <li key={c.name} className="relative h-20">
               <Image

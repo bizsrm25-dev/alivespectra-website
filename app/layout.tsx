@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { clashDisplay, hankenGrotesk, spaceMono } from "./fonts";
 import { SmoothScroll } from "@/components/motion/smooth-scroll";
+import { RevealController } from "@/components/motion/reveal-controller";
 import { SpectrumSpine, SiteHeader, SiteFooter } from "@/components/shell";
 import { Analytics } from "@/components/analytics/analytics";
 import { ScrollDepth } from "@/components/analytics/scroll-depth";
@@ -34,6 +35,7 @@ export default function RootLayout({
           Skip to content
         </a>
         <SmoothScroll>
+          <RevealController />
           <SpectrumSpine />
           <SiteHeader />
           <main id="content" className="flex-1">

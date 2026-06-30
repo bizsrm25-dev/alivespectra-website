@@ -61,8 +61,19 @@ html.lenis body {
 }
 
 /**
- * Reduced-motion safety net. The Lenis / GSAP / Motion layers also check this
- * at runtime, but this guarantees a calm, intentional fallback site-wide.
+ * Reveal system. The controller adds `gsap` to <html> (only when JS runs and
+ * motion is allowed), so the hidden start state applies ONLY then — no-JS,
+ * reduced-motion, and crawlers always get fully-visible content (SEO-safe).
+ * GSAP animates `.reveal` to opacity 1 / translateY 0 via one batched trigger.
+ */
+html.gsap .reveal {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+/**
+ * Reduced-motion safety net. The Lenis / GSAP layers also check this at
+ * runtime, but this guarantees a calm, intentional fallback site-wide.
  */
 @media (prefers-reduced-motion: reduce) {
   *,

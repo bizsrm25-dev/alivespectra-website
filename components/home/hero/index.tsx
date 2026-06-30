@@ -1,5 +1,6 @@
 import { Button, Container, Eyebrow } from "@/components/primitives";
 import { RefractionHero } from "./refraction-hero";
+import { HeroIntro } from "./hero-intro";
 
 export function Hero() {
   return (
@@ -7,7 +8,7 @@ export function Hero() {
       {/* One screen tall; pt clears the fixed header so the whole block —
           including the CTAs — sits above the fold. */}
       <Container className="grid min-h-[100svh] items-center gap-10 pt-20 pb-16 lg:grid-cols-[1.05fr_0.95fr]">
-        <div className="flex flex-col gap-5">
+        <HeroIntro className="flex flex-col gap-5">
           <Eyebrow accent="spine">
             Business consultancy • Dhaka • Since 2007
           </Eyebrow>
@@ -26,7 +27,7 @@ export function Hero() {
               Explore the spectrum
             </Button>
           </div>
-        </div>
+        </HeroIntro>
 
         <RefractionHero className="order-first lg:order-none" />
       </Container>

@@ -3,7 +3,7 @@ import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-sharp px-5 py-2.5 font-sans text-sm font-medium transition-colors [transition-duration:var(--dur-quick)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal disabled:pointer-events-none disabled:opacity-50";
+  "group/btn inline-flex items-center justify-center gap-2 rounded-sharp px-5 py-2.5 font-sans text-sm font-medium transition-[background-color,border-color,transform] [transition-duration:var(--dur-quick)] hover:-translate-y-0.5 active:translate-y-0 motion-reduce:transform-none motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal disabled:pointer-events-none disabled:opacity-50";
 
 const variants = {
   primary: "bg-pine text-paper hover:bg-pine-2",

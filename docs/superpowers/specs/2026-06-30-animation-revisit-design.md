@@ -24,8 +24,8 @@ animation engines ship (GSAP+Lenis and Framer Motion).
   - On mount, if `prefers-reduced-motion` → do nothing (content stays visible).
   - Else add `gsap` class to `<html>` in a layout effect (pre-paint), then run a
     single `ScrollTrigger.batch(".reveal", { once: true, onEnter: batch =>
-    gsap.to(batch, { opacity: 1, y: 0, stagger: 0.08, duration: 0.7,
-    ease: "power2.out" }) })`.
+gsap.to(batch, { opacity: 1, y: 0, stagger: 0.08, duration: 0.7,
+ease: "power2.out" }) })`.
   - Re-init on `pathname` change (kill old triggers, refresh).
 - `components/motion/reveal.tsx`: `<Reveal as? className?>` renders an element
   with class `reveal`. No per-component ScrollTrigger.

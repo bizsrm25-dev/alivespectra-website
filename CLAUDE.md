@@ -40,8 +40,9 @@ Fonts     font-display (Clash) · font-sans (Hanken) · font-mono (Space Mono)
 
 ## Stack
 
-Next.js 16 (App Router, TS) · Tailwind v4 · Lenis · GSAP/ScrollTrigger · Motion ·
-MDX (insights) · RHF+Zod+Resend (forms) · GA4+Vercel Analytics · Vercel host.
+Next.js 16 (App Router, TS) · Tailwind v4 · Lenis · GSAP/ScrollTrigger (all
+animation: spine, reveals, hero, micro-interactions) · MDX (insights) ·
+RHF+Zod+Resend (forms) · GA4+Vercel Analytics · Vercel host.
 
 ## Sitemap
 

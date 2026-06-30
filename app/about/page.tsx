@@ -66,7 +66,7 @@ export default function AboutPage() {
       />
       <Container className="flex flex-col gap-16 pt-16">
         {/* Story */}
-        <header className="flex flex-col gap-5">
+        <header className="reveal flex flex-col gap-5">
           <Eyebrow accent="spine">About</Eyebrow>
           <h1 className="max-w-[20ch] font-display text-[clamp(2.25rem,1.2rem+3vw,3.75rem)] leading-[1.05] font-semibold tracking-[-0.02em] text-pine">
             Seventeen years of changing the way of thinking.
@@ -81,7 +81,7 @@ export default function AboutPage() {
         </header>
 
         {/* Mission / vision */}
-        <section className="grid gap-10 lg:grid-cols-2">
+        <section className="reveal grid gap-10 lg:grid-cols-2">
           <div className="flex flex-col gap-3">
             <Eyebrow accent="var(--teal)">Mission</Eyebrow>
             <p className="t-h4 text-pine">
@@ -101,7 +101,7 @@ export default function AboutPage() {
         <Hairline />
 
         {/* Founder message */}
-        <section className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <section className="reveal grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div className="relative aspect-[4/5] w-full max-w-xs overflow-hidden rounded-card border border-line bg-paper-2">
             <Image
               src="/founder.jpg"
@@ -133,7 +133,7 @@ export default function AboutPage() {
         <Hairline />
 
         {/* CSR */}
-        <section className="flex flex-col gap-6">
+        <section className="reveal flex flex-col gap-6">
           <Eyebrow accent="spine">Responsibility</Eyebrow>
           <h2 className="t-h2 max-w-[20ch] text-pine">
             How we try to give back.
@@ -149,7 +149,7 @@ export default function AboutPage() {
         </section>
 
         {/* SDGs */}
-        <section className="flex flex-col gap-6">
+        <section className="reveal flex flex-col gap-6">
           <Eyebrow accent="var(--teal)">SDG alignment</Eyebrow>
           <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3">
             {sdgs.map((s) => (
@@ -164,7 +164,7 @@ export default function AboutPage() {
           </ul>
         </section>
 
-        <div className="flex flex-col items-start gap-4 border-t border-line pt-10">
+        <div className="reveal flex flex-col items-start gap-4 border-t border-line pt-10">
           <h2 className="t-h3 text-pine">Work with us.</h2>
           <Button variant="primary" href="/contact">
             Book a consultation

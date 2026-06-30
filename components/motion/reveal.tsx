@@ -1,34 +1,21 @@
-"use client";
-
 import type { ReactNode } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { cn } from "@/lib/utils";
 
 type RevealProps = {
   children: ReactNode;
-  delay?: number;
   className?: string;
+  /**
+   * Accepted for call-site compatibility. Sequencing is handled globally by the
+   * RevealController's batch stagger, so this is intentionally unused here.
+   */
+  delay?: number;
 };
 
 /**
- * Scroll-triggered "comes into focus" reveal: blur-to-sharp + upward drift.
- * Under prefers-reduced-motion, renders children static and fully visible.
+ * Marks a block for the global scroll-reveal, run once and batched by
+ * <RevealController/>. With JS off or under reduced motion the content is simply
+ * visible — the hidden start state is gated on the `html.gsap` class.
  */
-export function Reveal({ children, delay = 0, className }: RevealProps) {
-  const reduced = useReducedMotion();
-
-  if (reduced) {
-    return <div className={className}>{children}</div>;
-  }
-
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: 16, filter: "blur(8px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, margin: "0px 0px -10% 0px" }}
-      transition={{ duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }}
-    >
-      {children}
-    </motion.div>
-  );
+export function Reveal({ children, className }: RevealProps) {
+  return <div className={cn("reveal", className)}>{children}</div>;
 }
