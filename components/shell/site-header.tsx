@@ -2,15 +2,17 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { mainNav } from "@/data/navigation";
 import { Button } from "@/components/primitives";
-import { cn } from "@/lib/utils";
+import { cn, isNavActive } from "@/lib/utils";
 import { Logo } from "./logo";
 import { MobileMenu } from "./mobile-menu";
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   // Glass once scrolled ~60% of a viewport past the top (past the hero).
   useEffect(() => {
@@ -41,15 +43,29 @@ export function SiteHeader() {
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex">
-            {mainNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="font-sans text-sm text-ink/80 transition-colors hover:text-pine"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {mainNav.map((item) => {
+              const active = isNavActive(pathname, item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={cn(
+                    "relative font-sans text-sm transition-colors",
+                    active ? "text-pine" : "text-ink/80 hover:text-pine",
+                  )}
+                >
+                  {item.label}
+                  {active ? (
+                    <span
+                      aria-hidden
+                      className="absolute -bottom-1.5 left-0 h-0.5 w-full rounded-pill"
+                      style={{ background: "var(--spectrum)" }}
+                    />
+                  ) : null}
+                </Link>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-3">

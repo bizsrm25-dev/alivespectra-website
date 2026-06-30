@@ -20,7 +20,7 @@ export function PlansLadder() {
                 href={p.href}
                 className="group flex flex-col gap-2 border-t border-paper/15 py-6 sm:flex-row sm:items-baseline sm:gap-8"
               >
-                <span className="t-display w-16 text-paper/25 transition-colors group-hover:text-paper/60">
+                <span className="t-display w-24 shrink-0 leading-none text-paper/20 tabular-nums transition-colors group-hover:text-paper/40 sm:w-36">
                   {String(p.rung).padStart(2, "0")}
                 </span>
                 <span className="flex flex-1 flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">

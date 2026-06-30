@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { mainNav } from "@/data/navigation";
 import { Button } from "@/components/primitives";
-import { cn } from "@/lib/utils";
+import { cn, isNavActive } from "@/lib/utils";
 
 export function MobileMenu({
   open,
@@ -62,7 +62,7 @@ export function MobileMenu({
 
           <nav className="flex flex-col gap-2">
             {mainNav.map((item, i) => {
-              const active = pathname === item.href;
+              const active = isNavActive(pathname, item.href);
               return (
                 <motion.div
                   key={item.href}
