@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container, Eyebrow, Section } from "@/components/primitives";
 import { siteConfig } from "@/lib/site";
 
@@ -6,9 +7,14 @@ export function FounderMoment() {
   return (
     <Section tone="pine">
       <Container className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-        {/* Portrait slot — no asset in the repo yet; drop a headshot here later. */}
-        <div className="flex aspect-[4/5] w-full max-w-xs items-center justify-center rounded-card border border-paper/15 bg-pine-2">
-          <span className="t-mono text-xs text-paper/30">Portrait</span>
+        <div className="relative aspect-[4/5] w-full max-w-xs overflow-hidden rounded-card border border-paper/15 bg-pine-2">
+          <Image
+            src="/founder.jpg"
+            alt={`${siteConfig.founder}, Founder & Managing Director of Alive Spectra`}
+            fill
+            sizes="(max-width: 1024px) 80vw, 320px"
+            className="object-cover"
+          />
         </div>
 
         <div className="flex flex-col gap-6">

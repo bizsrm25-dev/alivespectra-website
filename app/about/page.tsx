@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Button,
   Container,
@@ -101,8 +102,14 @@ export default function AboutPage() {
 
         {/* Founder message */}
         <section className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-          <div className="flex aspect-[4/5] w-full max-w-xs items-center justify-center rounded-card border border-line bg-paper-2">
-            <span className="t-mono text-xs text-ink/40">Portrait</span>
+          <div className="relative aspect-[4/5] w-full max-w-xs overflow-hidden rounded-card border border-line bg-paper-2">
+            <Image
+              src="/founder.jpg"
+              alt={`${siteConfig.founder}, Founder & Managing Director of Alive Spectra`}
+              fill
+              sizes="(max-width: 1024px) 90vw, 360px"
+              className="object-cover"
+            />
           </div>
           <div className="flex flex-col gap-5">
             <Eyebrow accent="spine">Message from the founder</Eyebrow>

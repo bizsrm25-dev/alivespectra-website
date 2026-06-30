@@ -63,6 +63,7 @@ export function personLd() {
     name: siteConfig.founder,
     jobTitle: "Founder & Managing Director",
     worksFor: { ...orgRef },
+    image: abs("/founder.jpg"),
     url: abs("/about"),
   };
 }
