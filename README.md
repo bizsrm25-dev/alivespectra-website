@@ -1,7 +1,7 @@
 # Alive Spectra Ltd. — Website
 
 Production-grade marketing site for **[alivespectra.com](https://alivespectra.com)** — a 17-year
-business consultancy in Gulshan-1, Dhaka, Bangladesh. Tagline: _"Changing the way of thinking."_
+business consultancy in Gulshan, Dhaka, Bangladesh. Tagline: _"Changing the way of thinking."_
 
 Built around the **"Refraction"** creative concept: one idea refracted into a full spectrum of
 services, sister concerns, and projects. See [`CLAUDE.md`](./CLAUDE.md) for the brand, design

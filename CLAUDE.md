@@ -2,7 +2,7 @@
 
 # Alive Spectra Ltd. — Website
 
-Business consultancy, Gulshan-1, Dhaka, Bangladesh. Founded 2007 (17 yrs).
+Business consultancy, Niketon, Gulshan, Dhaka, Bangladesh. Founded 2007 (17 yrs).
 Tagline: "Changing the way of thinking." Site: alivespectra.com
 Founder & MD: Abdur Razzaq Mamun (also founded BizSolve, Agrovez, Alive
 Lighthouse, Alive News24). Feature him on /about + a homepage founder moment.
@@ -69,5 +69,5 @@ Brand source material (profile, guideline, logos) in `brand/`.
 
 ## Contact / NAP (keep identical everywhere)
 
-House 60, Road 28, Gulshan-1, Dhaka-1212, BD ·
+House 28, Road 1, Block A, Niketon, Gulshan, Dhaka-1212, BD ·
 +880 1919-666630 / +880 1939-903964 · support@alivespectra.com

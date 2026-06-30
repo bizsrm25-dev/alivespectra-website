@@ -9,14 +9,14 @@ export const siteConfig = {
   tagline: "Changing the way of thinking",
   url: "https://alivespectra.com",
   description:
-    "Alive Spectra refracts one idea into a full spectrum of execution — strategy, capital, technology, and a ready-built ecosystem. Business consultancy in Gulshan-1, Dhaka, since 2007.",
+    "Alive Spectra refracts one idea into a full spectrum of execution — strategy, capital, technology, and a ready-built ecosystem. Business consultancy in Gulshan, Dhaka, since 2007.",
   founded: 2007,
   founder: "Abdur Razzaq Mamun",
   contact: {
     email: "support@alivespectra.com",
     phones: ["+880 1919-666630", "+880 1939-903964"],
     address: {
-      line: "House 60, Road 28, Gulshan-1",
+      line: "House 28, Road 1, Block A, Niketon, Gulshan",
       city: "Dhaka",
       postalCode: "1212",
       country: "BD",

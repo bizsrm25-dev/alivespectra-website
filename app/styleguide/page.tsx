@@ -121,7 +121,7 @@ export default function Styleguide() {
           <div className="flex flex-wrap items-center gap-3">
             <Tag>17 years</Tag>
             <Tag>Founded 2007</Tag>
-            <Tag>Gulshan-1, Dhaka</Tag>
+            <Tag>Gulshan, Dhaka</Tag>
           </div>
           <div className="flex flex-wrap gap-4">
             <Eyebrow marker="02" accent="var(--spec-violet)">

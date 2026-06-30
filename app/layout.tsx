@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s · Alive Spectra Ltd.",
   },
   description:
-    "Alive Spectra refracts one idea into a full spectrum of execution — strategy, capital, technology, and a ready-built ecosystem. Business consultancy in Gulshan-1, Dhaka, since 2007.",
+    "Alive Spectra refracts one idea into a full spectrum of execution — strategy, capital, technology, and a ready-built ecosystem. Business consultancy in Gulshan, Dhaka, since 2007.",
 };
 
 export default function RootLayout({

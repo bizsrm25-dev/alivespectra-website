@@ -57,7 +57,7 @@ export const services: Service[] = [
       },
       {
         q: "Is this only for Dhaka-based businesses?",
-        a: "No. We are based in Gulshan-1, Dhaka, and work with founders and companies across Bangladesh.",
+        a: "No. We are based in Gulshan, Dhaka, and work with founders and companies across Bangladesh.",
       },
     ],
   },

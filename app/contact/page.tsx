@@ -4,7 +4,7 @@ import { ContactForm } from "@/components/contact/contact-form";
 import { siteConfig } from "@/lib/site";
 
 const description =
-  "Book a consultation with Alive Spectra. Tell us your stage and what you're after — we reply fast. Office in Gulshan-1, Dhaka.";
+  "Book a consultation with Alive Spectra. Tell us your stage and what you're after — we reply fast. Office in Gulshan, Dhaka.";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const mapQuery = encodeURIComponent(
-  "House 60, Road 28, Gulshan 1, Dhaka 1212, Bangladesh",
+  "House 28, Road 1, Block A, Niketon, Gulshan, Dhaka 1212, Bangladesh",
 );
 
 export default function ContactPage() {
@@ -64,7 +64,7 @@ export default function ContactPage() {
               </a>
             </div>
             <iframe
-              title="Alive Spectra office — Gulshan-1, Dhaka"
+              title="Alive Spectra office — Niketon, Gulshan, Dhaka"
               src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
               loading="lazy"
               className="h-72 w-full rounded-card border border-line"

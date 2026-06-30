@@ -7,7 +7,7 @@ export function HomeCta() {
     <Section tone="pine" className="border-t border-paper/10">
       <Container className="reveal flex flex-col items-start gap-6">
         <p className="t-mono text-xs text-teal-soft">
-          17 years · Gulshan-1, Dhaka
+          17 years · Gulshan, Dhaka
         </p>
         <h2 className="t-display max-w-[16ch] text-paper">
           Let’s refract your next idea.
