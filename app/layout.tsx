@@ -24,9 +24,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${clashDisplay.variable} ${hankenGrotesk.variable} ${spaceMono.variable} h-full antialiased`}
+      className={`${clashDisplay.variable} ${hankenGrotesk.variable} ${spaceMono.variable} antialiased`}
     >
-      <body className="flex min-h-full flex-col font-sans">
+      <body className="flex min-h-dvh flex-col font-sans">
         <a
           href="#content"
           className="sr-only rounded-sharp focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-pine focus:px-4 focus:py-2 focus:font-mono focus:text-sm focus:text-paper"

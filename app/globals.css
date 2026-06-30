@@ -43,6 +43,24 @@ body {
 }
 
 /**
+ * Lenis smooth-scroll helpers. Lenis adds `.lenis` to <html> while active;
+ * forcing height:auto prevents any `height:100%` from capping its scroll
+ * limit (the cause of wheel scroll stalling mid-page). Mirrors lenis/dist/lenis.css.
+ */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/**
  * Reduced-motion safety net. The Lenis / GSAP / Motion layers also check this
  * at runtime, but this guarantees a calm, intentional fallback site-wide.
  */
