@@ -17,15 +17,15 @@ guideline, and logos.
 
 ## Tech stack
 
-| Layer            | Choice                                                                                    |
-| ---------------- | ----------------------------------------------------------------------------------------- |
-| Framework        | [Next.js 16](https://nextjs.org) (App Router) + TypeScript                                |
-| Styling          | [Tailwind CSS v4](https://tailwindcss.com) + CSS-variable token layer                     |
-| Smooth scroll    | [Lenis](https://github.com/darkroomengineering/lenis)                                     |
-| Animation        | [GSAP + ScrollTrigger](https://gsap.com) (spine, reveals, hero, micro-interactions)       |
-| Fonts            | `next/font` — Clash Display (self-hosted), Hanken Grotesk + Space Mono (Google)           |
-| Lint / format    | ESLint 9 (flat config) + Prettier (with Tailwind class sorting)                           |
-| Hosting (target) | [Vercel](https://vercel.com)                                                              |
+| Layer            | Choice                                                                              |
+| ---------------- | ----------------------------------------------------------------------------------- |
+| Framework        | [Next.js 16](https://nextjs.org) (App Router) + TypeScript                          |
+| Styling          | [Tailwind CSS v4](https://tailwindcss.com) + CSS-variable token layer               |
+| Smooth scroll    | [Lenis](https://github.com/darkroomengineering/lenis)                               |
+| Animation        | [GSAP + ScrollTrigger](https://gsap.com) (spine, reveals, hero, micro-interactions) |
+| Fonts            | `next/font` — Clash Display (self-hosted), Hanken Grotesk + Space Mono (Google)     |
+| Lint / format    | ESLint 9 (flat config) + Prettier (with Tailwind class sorting)                     |
+| Hosting (target) | [Vercel](https://vercel.com)                                                        |
 
 ---
 
@@ -121,7 +121,7 @@ runs without them (the contact form returns a graceful error, analytics no-op).
 | Variable            | Purpose                                                                                                                                                                                                                                                                                 |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `RESEND_API_KEY`    | Resend key for the contact form email.                                                                                                                                                                                                                                                  |
-| `CONTACT_TO`        | Where submissions are delivered (default `alivespectra@gmail.com`).                                                                                                                                                                                                                     |
+| `CONTACT_TO`        | Where submissions are delivered (default `support@alivespectra.com`).                                                                                                                                                                                                                   |
 | `RESEND_FROM`       | Sender. **Must be a verified-domain address in production** — verify `alivespectra.com` at [resend.com/domains](https://resend.com/domains), then set e.g. `Alive Spectra <hello@alivespectra.com>`. The test sender `onboarding@resend.dev` only delivers to the Resend account owner. |
 | `NEXT_PUBLIC_GA_ID` | GA4 Measurement ID (e.g. `G-XXXXXXX`). GA4 loads only when set.                                                                                                                                                                                                                         |
 
